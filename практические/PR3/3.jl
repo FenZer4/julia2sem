@@ -22,21 +22,4 @@ end
 
 print(factorize(450))
 
-"""Простые делители числа и их кратности"""
-function divsAndTheirMultiple(n::Integer)
-    primes = eratosphen(n)
-    divs = []
-    multiples = []
-    for d in primes
-        if n % d == 0
-            push!(divs, d)
-            push!(multiples, 0)
-            while n%d==0
-                n /= d
-                multiples[length(multiples)] += 1 
-            end
-        end
-    end
-    return primes, multiples
-end
 
